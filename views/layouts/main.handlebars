@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./../public/js/index.js"></script>
+    <title>eat-Da-Burger</title>
+</head>
+<body>
+    {{{body}}}
+</body>
+<script>
+    // creating new burger
+$("#addBurger").on("click", function(event){
+    event.preventDefault();
+    alert("hello");
+    // grabbing input from input
+    var newBurger = {
+        name:$("#newBurgerName").val().trim()
+    }
+    console.log($("#newBurgerName").val().trim());
+    //sending post request
+    $.ajax("/api/burgers", {
+        type: "POST",
+        data:newBurger
+    }).then(function(){
+        console.log("added new burger");
+        // reloading a page
+        location.reload();
+    })
+})
+</script>
+</html>
