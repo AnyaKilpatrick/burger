@@ -7,14 +7,12 @@ var burger = {
         });
     },
     insertOne: function(burgerName, callback){
-        orm.insertOne(burgerName, function(err, res){
-            if(err) throw err;
+        orm.insertOne(burgerName, function(res){
             callback(res);
         });
     },
     updateOne: function(newName, id, func){
-        orm.updateOne(newName, id, function(err, res){
-            if(err) throw err;
+        orm.updateOne(newName, id, function(res){
             func(res);
         });
     }

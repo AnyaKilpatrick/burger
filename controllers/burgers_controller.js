@@ -14,9 +14,10 @@ router.get("/", function(req, res){
 });
 
 router.post("/api/burgers", function(req, res){
-
+    console.log(req.body.name);
     burger.insertOne(req.body.name, function(result){
-        res.redirect("/");
+        console.log("new burger added");
+        res.status(200).end();
     })
 });
 

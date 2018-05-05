@@ -1,6 +1,8 @@
 // creating new burger
-$("#addBurger").on("click", function(event){
+$(".create-form").on("submit", function(event){
+    debugger
     event.preventDefault();
+    console.log("clicked");
     alert("added new burger");
     // grabbing input from input
     var newBurger = {

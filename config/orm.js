@@ -10,7 +10,7 @@ var orm = {
         })
     },
     insertOne: function(burgerName, callback){
-        connection.query("insert into burgers set ?", 
+        connection.query("insert into burgers set ? ;", 
         {
             burger_name : burgerName
         }, function(err, result){

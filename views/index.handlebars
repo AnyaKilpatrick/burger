@@ -23,9 +23,18 @@
     {{/each}}
 </ul>
 
-<form>
+{{!-- <form>
   <div class="form-group">
     <input type="text" class="form-control" id="newBurgerName">
   </div>
   <button type="submit" class="btn btn-primary" id="addBurger">Submit</button>
+</form> --}}
+
+<form class="create-form">
+<div class="form-group">
+    <textarea type="text" class="form-control" id="newBurgerName" name="name"></textarea>
+    <br />
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <p>Enter a burger you want to eat.<br>Click the "Submit" button</p>
+</div>
 </form>
