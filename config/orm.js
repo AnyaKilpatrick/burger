@@ -19,17 +19,17 @@ var orm = {
             console.log("orm works");
         })
     },
-    updateOne: function(newName, id, func){
+    updateOne: function(devoured, id, callback){
         connection.query("update burgers set ? where ?", [
             {
-                burger_name: newName
+                devoured: devoured
             },
             {
                 id: id
             }
         ], function(err, result){
             if(err) throw err;
-            func(result);
+            callback(result);
         })
     }
 }
