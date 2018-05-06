@@ -1,21 +1,31 @@
+$(document).ready(function(){
+    $('.parallax').parallax();
+  });
 // creating new burger
 $(".create-form").on("submit", function(event){
-    debugger
     event.preventDefault();
-    console.log("clicked");
-    // grabbing input
-    var newBurger = {
-        name:$("#newBurgerName").val().trim()
+    function validateForm(){
+        var isValid = true;
+        if($("#newBurgerName").val().trim() === ""){
+            isValid=false;
+        }
+        return isValid;
     }
-    console.log($("#newBurgerName").val().trim());
-    //sending post request
-    $.ajax("/api/burgers", {
-        type: "POST",
-        data:newBurger
-    }).then(function(){
-        console.log("added new burger");
-        location.reload();
-    })
+    if (validateForm()){
+        // grabbing input
+        var newBurger = {
+            name:$("#newBurgerName").val().trim()
+        }
+        console.log($("#newBurgerName").val().trim());
+        //sending post request
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data:newBurger
+        }).then(function(){
+            console.log("added new burger");
+            location.reload();
+        })
+    }
 })
 
 // updating burger (setting devoured to true)
@@ -34,4 +44,5 @@ $(".eatBurger").on("click", function(){
         location.reload();
     })
 })
+
 
