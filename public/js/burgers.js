@@ -15,6 +15,7 @@ $(".create-form").on("submit", function(event){
         data:newBurger
     }).then(function(){
         console.log("added new burger");
+        location.reload();
     })
 })
 
